@@ -25,7 +25,7 @@ export async function seedDatabase() {
             // Seed Admin
             const adminUser = new User({
                 username: 'admin',
-                password: 'admin123',
+                password: '123',
                 role: 'admin',
                 canManageCategories: true
             });
@@ -39,7 +39,7 @@ export async function seedDatabase() {
             });
             await regularUser.save();
             
-            console.log('Successfully seeded default users: admin/admin123 (Admin) and user/user123 (User).');
+            console.log('Successfully seeded default users: admin/123 (Admin) and user/user123 (User).');
         }
 
         // 2. Seed Business Categories

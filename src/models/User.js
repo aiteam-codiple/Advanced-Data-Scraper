@@ -36,6 +36,7 @@ userSchema.statics.decryptPassword = function(text) {
         decrypted = Buffer.concat([decrypted, decipher.final()]);
         return decrypted.toString();
     } catch (err) {
+        console.error('[Decryption Warning]: Password decryption failed. This is likely caused by an ENCRYPTION_KEY mismatch (e.g. if the encryption key in .env changed since this account was created).', err.message);
         return text; // Return as-is if decryption fails
     }
 };
